@@ -1,0 +1,87 @@
+/* Glassmorphism Design System */
+:root {
+    --primary-neon: #00ff88;
+    --secondary-neon: #00d4ff;
+    --accent-gold: #ffcc00;
+    --bg-dark: #0a0e14;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.stApp {
+    background: radial-gradient(circle at top right, #1a2a3a, #0a0e14);
+    color: #e0e0e0;
+}
+
+/* Glass Card */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Ticker Animation */
+.ticker-container {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(0, 255, 136, 0.1);
+    border-top: 1px solid var(--primary-neon);
+    border-bottom: 1px solid var(--primary-neon);
+    padding: 10px 0;
+}
+
+.ticker-wrap {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.ticker-item {
+    padding: 0 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: var(--primary-neon);
+}
+
+.price-up { color: #00ff88; }
+.price-down { color: #ff4b4b; }
+
+/* Custom Headers */
+h1, h2, h3 {
+    color: var(--secondary-neon) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Sidebar Customization */
+section[data-testid="stSidebar"] {
+    background-color: rgba(10, 14, 20, 0.95);
+    border-right: 1px solid var(--glass-border);
+}
+
+/* Metric styling */
+div[data-testid="stMetricValue"] {
+    color: var(--accent-gold) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-neon);
+    border-radius: 10px;
+}
